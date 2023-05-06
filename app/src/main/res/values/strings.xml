@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MAD Project</string>
+    <string name="Name">Name</string>
+    <string name="Phone">Phone</string>
+    <string name="Email">Email</string>
+    <string name="Username">Username</string>
+    <string name="Password">Password</string>
+    <string name="Profile">Profile</string>
+    <string name="Nedd_Item">Need_Item</string>
+    <string name="Home">Home</string>
+    <string name="Donate">Donate</string>
+    <string name="Free_Tution">Free_Tution</string>
+    <string name="Type">Type</string>
+    <string name="Submit">Submit</string>
+</resources>
