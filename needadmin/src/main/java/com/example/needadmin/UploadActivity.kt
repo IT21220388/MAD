@@ -26,6 +26,7 @@ class UploadActivity : AppCompatActivity() {
             val needItems = binding.uploadNeedItems.text.toString()
             val phone = binding.uploadPhone.text.toString()
 
+         //connect firebase
             databaseReference =FirebaseDatabase.getInstance().getReference("Need Items")
             val users =UserData(name, position, needItems, phone)
             databaseReference.child(name).setValue(users).addOnSuccessListener {

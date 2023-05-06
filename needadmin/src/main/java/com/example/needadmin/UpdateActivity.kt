@@ -27,7 +27,7 @@ class UpdateActivity : AppCompatActivity() {
             updateData(updateName,updatePosition,referenceNeedItems,updatePhone)
         }
     }
-
+     //connect firebase
     private fun updateData(name:String,position:String,needItems:String,phone:String){
         databaseReference=FirebaseDatabase.getInstance().getReference("Need Items")
         val user= mapOf<String,String>("name" to name,"position" to position,"needItems" to needItems,"phone" to phone)

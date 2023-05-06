@@ -28,7 +28,7 @@ class DeleteActivity : AppCompatActivity() {
             }
         }
     }
-
+    //connect firebase
     private fun deleteData(name: String){
         databaseReference=FirebaseDatabase.getInstance().getReference("Need Items")
         databaseReference.child(name).removeValue().addOnSuccessListener {
