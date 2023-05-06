@@ -16,18 +16,19 @@ class read_data : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityReadDataBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+       //connect button to update page
         val   updateDataAcButton = findViewById<Button>(R.id.update_profile)
         updateDataAcButton.setOnClickListener {
             val Intent = Intent(this,update::class.java)
             startActivity(Intent)
         }
+        //connect button to delete page
         val   deleteDataAcButton = findViewById<Button>(R.id.delete_profile)
         deleteDataAcButton.setOnClickListener {
             val Intent = Intent(this,delete_data::class.java)
             startActivity(Intent)
         }
-
+        //set read button
         binding.readdataBtn.setOnClickListener {
             val username: String = binding.userName.text.toString()
             if (username.isNotEmpty()) {

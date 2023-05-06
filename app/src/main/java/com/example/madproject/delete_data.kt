@@ -21,12 +21,13 @@ class delete_data : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDeleteDataBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        //connect to button
         val   BackDataAcButton = findViewById<Button>(R.id.back)
         BackDataAcButton.setOnClickListener {
             val Intent = Intent(this,read_data::class.java)
             startActivity(Intent)
         }
-
+        //connect database to delete account
         database = FirebaseDatabase.getInstance().getReference("user")
         binding.delete.setOnClickListener {
             val username = binding.etUsername.text.toString().trim()

@@ -19,13 +19,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        //connect read button in read page
         val   readDataAcButton = findViewById<Button>(R.id.profile)
         readDataAcButton.setOnClickListener {
             val Intent = Intent(this,read_data::class.java)
             startActivity(Intent)
         }
-
+        //passing the data to read data page
         binding.submit.setOnClickListener {
             val name = binding.name.text.toString()
             val phone =binding.phone.text.toString()
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
             val password =binding.password.text.toString()
             database = FirebaseDatabase.getInstance().getReference("user")
             val user = user(name,phone,email,username,password,type)
-
+            //enter the username and display data
             database.child(username).setValue(user).addOnSuccessListener{
                 binding.name.text.clear()
                 binding.phone.text.clear()
