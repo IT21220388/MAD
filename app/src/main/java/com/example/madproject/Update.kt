@@ -18,37 +18,34 @@ class update : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityUpdateBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val   backDataAcButton = findViewById<Button>(R.id.back_update)
-        backDataAcButton.setOnClickListener {
-            val Intent = Intent(this,read_data::class.java)
-            startActivity(Intent)
-        }
+
 
         binding.update.setOnClickListener {
             val name = binding.name.text.toString()
             val phone =binding.phone.text.toString()
-            val email =binding.email.text.toString()
-            val username =binding.username.text.toString()
-            val type =binding.type.text.toString()
+            val address =binding.address.text.toString()
+            val email =binding.address.text.toString()
+            val item =binding.item.text.toString()
 
-            updateData(name,phone,email,username,type)
+            updateData(name,phone, address,email,item)
         }
     }
-    private fun updateData(name: String, phone: String, email: String, username: String, type: String ){
-        database = FirebaseDatabase.getInstance().getReference("user")
+    private fun updateData(name: String, phone: String, address: String, email: String, item: String ){
+        database = FirebaseDatabase.getInstance().getReference("USER")
         val user = mapOf<String,String>(
             "name" to name,
             "phone" to phone,
+            "address" to address,
             "email" to email,
-            "username" to username,
-            "type" to type
+            "item" to item
         )
-        database.child(username).updateChildren(user).addOnSuccessListener {
-            binding.username.text.clear()
+        database.child(email).updateChildren(user).addOnSuccessListener {
+            binding.email.text.clear()
             binding.name.text.clear()
             binding.phone.text.clear()
-            binding.username.text.clear()
-            binding.type.text.clear()
+            binding.address.text.clear()
+            binding.email.text.clear()
+            binding.item.text.clear()
             Toast.makeText(this,"Successfuly Updated",Toast.LENGTH_SHORT).show()
         }.addOnFailureListener {
             Toast.makeText(this, "Failed to Update", Toast.LENGTH_SHORT).show()

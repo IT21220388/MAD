@@ -14,27 +14,23 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 
 
-class delete_data : AppCompatActivity() {
+class delete : AppCompatActivity() {
     private lateinit var binding: ActivityDeleteDataBinding
     private lateinit var database: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDeleteDataBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val   BackDataAcButton = findViewById<Button>(R.id.back)
-        BackDataAcButton.setOnClickListener {
-            val Intent = Intent(this,read_data::class.java)
-            startActivity(Intent)
-        }
 
-        database = FirebaseDatabase.getInstance().getReference("user")
+
+        database = FirebaseDatabase.getInstance().getReference("USER")
         binding.delete.setOnClickListener {
-            val username = binding.etUsername.text.toString().trim()
-            deleteUserData(username)
+            val email = binding.etUsername.text.toString().trim()
+            deleteUserData(email)
         }
     }
-    private fun deleteUserData(username: String){
-        val userQuery: Query = database.orderByChild("username").equalTo(username)
+    private fun deleteUserData(email: String){
+        val userQuery: Query = database.orderByChild("email").equalTo(email)
 
         userQuery.addListenerForSingleValueEvent(object : ValueEventListener{
             override fun onDataChange(dataSnapshot: DataSnapshot){
