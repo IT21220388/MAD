@@ -25,6 +25,11 @@ class MainActivity : AppCompatActivity() {
             val Intent = Intent(this,read_data::class.java)
             startActivity(Intent)
         }
+        val BackHomeButton = findViewById<Button>(R.id.back_home)
+        BackHomeButton.setOnClickListener {
+            val Intent = Intent(this,home::class.java)
+            startActivity(Intent)
+        }
         //passing the data to read data page
         binding.submit.setOnClickListener {
             val name = binding.name.text.toString()

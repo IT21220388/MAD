@@ -28,6 +28,12 @@ class read_data : AppCompatActivity() {
             val Intent = Intent(this,delete_data::class.java)
             startActivity(Intent)
         }
+        //connect register page
+        val BACKDataAcButton = findViewById<Button>(R.id.backRegisterBtn)
+        BACKDataAcButton.setOnClickListener {
+            val Intent = Intent(this,MainActivity::class.java)
+            startActivity(Intent)
+        }
         //set read button
         binding.readdataBtn.setOnClickListener {
             val username: String = binding.userName.text.toString()
