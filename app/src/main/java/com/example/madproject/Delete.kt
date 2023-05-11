@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
-import com.example.madproject.databinding.ActivityDeleteDataBinding
+import com.example.madproject.databinding.ActivityDeleteBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.Query
@@ -14,18 +14,24 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 
 
-class delete : AppCompatActivity() {
-    private lateinit var binding: ActivityDeleteDataBinding
+class Delete : AppCompatActivity() {
+    private lateinit var binding: ActivityDeleteBinding
     private lateinit var database: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDeleteDataBinding.inflate(layoutInflater)
+        binding = ActivityDeleteBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val BACKReadAcButton = findViewById<Button>(R.id.BACK_read)
+        BACKReadAcButton.setOnClickListener {
+            val Intent = Intent(this,Read_Data::class.java)
+            startActivity(Intent)
+        }
 
 
         database = FirebaseDatabase.getInstance().getReference("USER")
-        binding.delete.setOnClickListener {
-            val email = binding.etUsername.text.toString().trim()
+        binding.deleteData.setOnClickListener {
+            val email = binding.email.text.toString().trim()
             deleteUserData(email)
         }
     }

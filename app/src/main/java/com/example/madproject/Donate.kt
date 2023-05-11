@@ -1,20 +1,29 @@
 package com.example.madproject
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
-import com.example.madproject.databinding.ActivitydonateDataBinding
+import com.example.madproject.databinding.ActivityDonateBinding
 import com.google.firebase.database.FirebaseDatabase
 
 class Donate : AppCompatActivity() {
-    private lateinit var binding: ActivitydonateDataBinding
+    private lateinit var binding: ActivityDonateBinding
     private  lateinit var database: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivitydonateDataBinding.inflate(layoutInflater)
+        binding = ActivityDonateBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-
         setContentView(binding.root)
+
+
+        //connect read data button
+        val readAcButton = findViewById<Button>(R.id.readData)
+        readAcButton.setOnClickListener {
+            val Intent = Intent(this,Read_Data::class.java)
+            startActivity(Intent)
+        }
        binding.submit.setOnClickListener{
            val name =binding.name.text.toString()
            val phone=binding.phone.text.toString()
