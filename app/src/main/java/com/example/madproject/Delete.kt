@@ -31,22 +31,22 @@ class Delete : AppCompatActivity() {
 
         database = FirebaseDatabase.getInstance().getReference("USER")
         binding.deleteData.setOnClickListener {
-            val email = binding.email.text.toString().trim()
-            deleteUserData(email)
+            val username = binding.dUsername.text.toString().trim()
+            deleteUserData(username)
         }
     }
-    private fun deleteUserData(email: String){
-        val userQuery: Query = database.orderByChild("email").equalTo(email)
+    private fun deleteUserData(username: String){
+        val userQuery: Query = database.orderByChild("username").equalTo(username)
 
         userQuery.addListenerForSingleValueEvent(object : ValueEventListener{
             override fun onDataChange(dataSnapshot: DataSnapshot){
                 for (userSnapshot in dataSnapshot.children) {
                     userSnapshot.ref.removeValue()
                 }
-                Toast.makeText(applicationContext, "User data deleted successfully", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "Data deleted successfully", Toast.LENGTH_SHORT).show()
             }
             override fun onCancelled(databaseError: DatabaseError) {
-                Toast.makeText(applicationContext, "Error deleting user data", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Error deleting data", Toast.LENGTH_LONG).show()
             }
         })
     }

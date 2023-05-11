@@ -30,18 +30,18 @@ class Update : AppCompatActivity() {
         binding.UpdateData.setOnClickListener {
             val name = binding.name.text.toString()
             val phone = binding.phone.text.toString()
-            val address = binding.address.text.toString()
-            val email = binding.address.text.toString()
-            val items = binding.items.text.toString()
+            val username = binding.username.text.toString()
+            val email = binding.email.text.toString()
+            val item = binding.item.text.toString()
 
-            updateData(name, phone, address, email, items)
+            updateData(name, phone, username, email, item)
         }
     }
 
     private fun updateData(
         name: String,
         phone: String,
-        address: String,
+        username: String,
         email: String,
         item: String
     ) {
@@ -49,7 +49,7 @@ class Update : AppCompatActivity() {
         val user = mapOf<String, String>(
             "name" to name,
             "phone" to phone,
-            "address" to address,
+            "Username" to username,
             "email" to email,
             "item" to item
         )
@@ -57,9 +57,9 @@ class Update : AppCompatActivity() {
             binding.email.text.clear()
             binding.name.text.clear()
             binding.phone.text.clear()
-            binding.address.text.clear()
+            binding.username.text.clear()
             binding.email.text.clear()
-            binding.items.text.clear()
+            binding.item.text.clear()
             Toast.makeText(this, "Successfuly Updated", Toast.LENGTH_SHORT).show()
         }.addOnFailureListener {
             Toast.makeText(this, "Failed to Update", Toast.LENGTH_SHORT).show()

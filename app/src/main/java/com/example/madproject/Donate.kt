@@ -27,23 +27,22 @@ class Donate : AppCompatActivity() {
        binding.submit.setOnClickListener{
            val name =binding.name.text.toString()
            val phone=binding.phone.text.toString()
-           val address=binding.address.text.toString()
+           val username=binding.username.text.toString()
            val email =binding.email.text.toString()
            val item =binding.item.text.toString()
            database= FirebaseDatabase.getInstance().getReference("USER")
-              val user=User(name,phone,address, email,item)
+              val user=User(name,phone,username,email,item)
 
-           database.child(email).setValue(user).addOnSuccessListener{
+           database.child(username).setValue(user).addOnSuccessListener{
                      binding.name.text.clear()
                     binding.phone.text.clear()
-                      binding.address.text.clear()
+                    binding.username.text.clear()
                      binding.email.text.clear()
                      binding.item.text.clear()
                Toast.makeText(this,"Success saved",Toast.LENGTH_SHORT).show()
            }.addOnFailureListener{
                Toast.makeText(this,"Failed",Toast.LENGTH_SHORT).show()
            }
-
 
        }
 

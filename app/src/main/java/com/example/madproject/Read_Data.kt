@@ -3,6 +3,7 @@ package com.example.madproject
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import android.widget.Button
 import android.widget.Toast
 import com.example.madproject.databinding.ActivityReadDataBinding
@@ -37,33 +38,33 @@ class Read_Data : AppCompatActivity() {
 
         //set read button
         binding.read.setOnClickListener {
-            val email:String= binding.Remail.text.toString()
-            if(email.isNotEmpty()){
-                readData(email)
+            val username:String= binding.Rusername.text.toString()
+            if(username.isNotEmpty()){
+                readData(username)
             }else{
-                Toast.makeText(this,"Please enter the email",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Please enter the username",Toast.LENGTH_SHORT).show()
             }
 
         }
     }
 
 
-    private fun readData(email:String){
+    private fun readData(username:String){
         database=FirebaseDatabase.getInstance().getReference("USER")
-        database.child(email).get().addOnSuccessListener { dataSnapshot ->
+        database.child(username).get().addOnSuccessListener { dataSnapshot ->
             if(dataSnapshot.exists()){
                 val name = dataSnapshot.child("name").value.toString()
                 val phone= dataSnapshot.child("phone").value.toString()
-                val address = dataSnapshot.child("address").value.toString()
+                val username = dataSnapshot.child("username").value.toString()
                 val email = dataSnapshot.child("email").value.toString()
                 val item = dataSnapshot.child("item").value.toString()
 
                 Toast.makeText(this,"Read Successfull",Toast.LENGTH_SHORT).show()
-                binding.Remail.text.clear()
-                binding.Phone.text=phone
+                binding.Rusername.text = Editable.Factory.getInstance().newEditable("")
+                binding.Phone.text = phone
                 binding.Name.text = name
-                binding.Address.text=address
-                binding.Items.text=item
+                binding.Email.text = email
+                binding.Items.text = item
 
             }else{
                 Toast.makeText(this,"User Does Not Exist",Toast.LENGTH_SHORT).show()
