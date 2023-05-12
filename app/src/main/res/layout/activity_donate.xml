@@ -87,6 +87,7 @@
         android:layout_marginBottom="146dp"
         android:background="@color/design_default_color_primary_dark"
         android:text="@string/Submit"
+        android:textColor="@color/white"
         android:textSize="@dimen/text5"
         app:layout_constraintBottom_toTopOf="@+id/imageView14"
         app:layout_constraintEnd_toEndOf="parent"
@@ -236,6 +237,7 @@
         android:layout_marginTop="32dp"
         android:background="@color/design_default_color_primary_dark"
         android:text="Read"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/submit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/item" />

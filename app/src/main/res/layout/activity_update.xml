@@ -51,6 +51,7 @@
         android:layout_marginEnd="8dp"
         android:background="@color/design_default_color_primary_dark"
         android:text="Update"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"

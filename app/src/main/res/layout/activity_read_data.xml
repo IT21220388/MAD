@@ -37,7 +37,8 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:background="@color/design_default_color_primary_dark"
-        android:text="READDATA"
+        android:text="READ DATA"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Rusername" />
@@ -115,6 +116,7 @@
         android:layout_marginTop="65dp"
         android:background="@color/design_default_color_primary_dark"
         android:text="Update"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/delete"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Email" />
@@ -127,6 +129,7 @@
         android:layout_marginEnd="8dp"
         android:background="@color/design_default_color_primary_dark"
         android:text="Delete"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/deleteData"
         app:layout_constraintTop_toBottomOf="@+id/Email" />
