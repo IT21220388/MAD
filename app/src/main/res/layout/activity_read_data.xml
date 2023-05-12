@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".Read_Data">
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="604dp"
+        android:background="@drawable/wave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <EditText
         android:id="@+id/Rusername"
         android:layout_width="wrap_content"
@@ -28,6 +36,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
+        android:background="@color/design_default_color_primary_dark"
         android:text="READDATA"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -90,10 +99,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="108dp"
         android:layout_marginEnd="8dp"
         android:text="Back"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Items" />
 
@@ -103,6 +113,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="65dp"
+        android:background="@color/design_default_color_primary_dark"
         android:text="Update"
         app:layout_constraintEnd_toStartOf="@+id/delete"
         app:layout_constraintStart_toStartOf="parent"
@@ -114,6 +125,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="65dp"
         android:layout_marginEnd="8dp"
+        android:background="@color/design_default_color_primary_dark"
         android:text="Delete"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/deleteData"
@@ -124,12 +136,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="8dp"
-        android:text="DonationData"
+        android:text="Donation Data"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

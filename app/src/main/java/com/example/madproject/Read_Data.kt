@@ -33,6 +33,7 @@ class Read_Data : AppCompatActivity() {
         val BackAcButton = findViewById<Button>(R.id.back)
         BackAcButton.setOnClickListener {
             val Intent = Intent(this,Donate::class.java)
+            startActivity(Intent)
         }
 
 

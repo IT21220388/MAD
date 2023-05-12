@@ -53,7 +53,7 @@ class Update : AppCompatActivity() {
             "email" to email,
             "item" to item
         )
-        database.child(email).updateChildren(user).addOnSuccessListener {
+        database.child(username).updateChildren(user).addOnSuccessListener {
             binding.email.text.clear()
             binding.name.text.clear()
             binding.phone.text.clear()

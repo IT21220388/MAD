@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".Donate">
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="604dp"
+        android:background="@drawable/wave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 
     <TextView
@@ -17,7 +24,7 @@
         android:layout_marginEnd="8dp"
         android:text="@string/Donation"
         android:textColor="@color/black"
-        android:textSize="25dp"
+        android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -227,6 +234,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
+        android:background="@color/design_default_color_primary_dark"
         android:text="Read"
         app:layout_constraintEnd_toStartOf="@+id/submit"
         app:layout_constraintStart_toStartOf="parent"

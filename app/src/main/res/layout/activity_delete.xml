@@ -7,6 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".Delete">
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="604dp"
+        android:background="@drawable/wave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
 
     <TextView
         android:id="@+id/textView3"
@@ -17,7 +25,7 @@
         android:layout_marginEnd="8dp"
         android:text="@string/Donation"
         android:textColor="@color/black"
-        android:textSize="25dp"
+        android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
